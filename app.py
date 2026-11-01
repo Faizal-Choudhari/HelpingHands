@@ -569,7 +569,10 @@ def not_found(e):
 def server_error(e):
     return render_template("error.html",code=500,message="Something went wrong. Please try again."),500
 
+# Initialize the database when the application is imported by Gunicorn on Render.
+# CREATE TABLE IF NOT EXISTS keeps existing tables and their data intact.
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+init_db()
+
 if __name__ == "__main__":
-    os.makedirs(UPLOAD_DIR,exist_ok=True)
-    init_db()
     app.run(debug=True, host="127.0.0.1", port=5000)
