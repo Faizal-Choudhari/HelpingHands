@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Login{% endblock %}{% block content %}
+<div class="auth-wrap"><div class="auth-card"><div class="auth-icon"><i class="fa-solid fa-user-shield"></i></div><h2>Welcome back</h2><p class="text-muted">Sign in to your VolunteerHub account.</p>
+<form method="post"><div class="mb-3"><label class="form-label">Email address</label><input class="form-control" type="email" name="email" required placeholder="you@example.com"></div><div class="mb-3"><label class="form-label">Password</label><input class="form-control" type="password" name="password" required></div><button class="btn btn-green w-100 py-2">Login <i class="fa-solid fa-arrow-right ms-2"></i></button></form>
+<div class="text-center mt-3 small">New here? <a href="{{ url_for('register') }}">Create a volunteer account</a></div>
+</div></div>{% endblock %}

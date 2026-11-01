@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Announcements{% endblock %}{% block content %}
+<div class="container py-4"><div class="section-heading"><div><span class="eyebrow">STAY INFORMED</span><h2>Announcements</h2></div></div>
+{% if session.role=='admin' %}<div class="panel mb-4"><h5>Publish announcement</h5><form method="post"><div class="mb-2"><input class="form-control" name="title" placeholder="Announcement title" required></div><div class="mb-2"><textarea class="form-control" name="message" rows="3" placeholder="Write your announcement..." required></textarea></div><button class="btn btn-green">Publish</button></form></div>{% endif %}
+{% for a in announcements %}<div class="panel mb-3"><div class="d-flex justify-content-between"><h5>{{ a.title }}</h5><small class="text-muted">{{ a.created_at[:16] }}</small></div><p class="mb-0 text-muted">{{ a.message }}</p></div>{% else %}<p class="text-muted">No announcements yet.</p>{% endfor %}</div>{% endblock %}

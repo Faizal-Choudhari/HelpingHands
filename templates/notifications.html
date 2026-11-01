@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block title %}Notifications{% endblock %}{% block content %}
+<div class="container py-4"><span class="eyebrow">UPDATES</span><h2>Notifications</h2>{% for n in notifications %}<div class="panel mb-2"><div>{{ n.message }}</div><small class="text-muted">{{ n.created_at }}</small></div>{% else %}<p class="text-muted mt-3">You have no notifications.</p>{% endfor %}</div>{% endblock %}

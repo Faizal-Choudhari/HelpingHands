@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block title %}Volunteer Registration{% endblock %}{% block content %}
+<div class="container py-5"><div class="form-shell"><div class="mb-4"><span class="eyebrow">JOIN OUR COMMUNITY</span><h2>Create your volunteer account</h2><p class="text-muted">Complete the form below. Your account will be activated after admin approval.</p></div>
+<form method="post" class="row g-3">
+<div class="col-md-6"><label class="form-label">Full name *</label><input name="name" class="form-control" required></div>
+<div class="col-md-6"><label class="form-label">Email *</label><input name="email" type="email" class="form-control" required></div>
+<div class="col-md-6"><label class="form-label">Phone</label><input name="phone" class="form-control"></div>
+<div class="col-md-6"><label class="form-label">Password * (minimum 8 characters)</label><input name="password" type="password" minlength="8" class="form-control" required></div>
+<div class="col-md-8"><label class="form-label">Address</label><input name="address" class="form-control"></div>
+<div class="col-md-4"><label class="form-label">Age</label><input name="age" type="number" min="16" max="100" class="form-control"></div>
+<div class="col-md-6"><label class="form-label">Skills</label><input name="skills" class="form-control" placeholder="Teaching, first aid, design..."></div>
+<div class="col-md-6"><label class="form-label">Areas of interest</label><input name="interests" class="form-control" placeholder="Education, environment..."></div>
+<div class="col-12"><label class="form-label">Availability</label><input name="availability" class="form-control" placeholder="Weekends, evenings..."></div>
+<div class="col-12"><button class="btn btn-green px-4">Submit registration</button></div></form></div></div>{% endblock %}
